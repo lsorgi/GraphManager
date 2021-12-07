@@ -22,5 +22,5 @@
    
 ```
 cd ~/GraphManager
-pytest ./tests 
+pytest ./test
 ```
