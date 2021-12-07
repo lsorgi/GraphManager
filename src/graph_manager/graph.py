@@ -27,12 +27,20 @@ class Graph:
         return list(self._map.keys())
 
     @property
+    def node_count(self) -> int:
+        return len(self.nodes)
+
+    @property
     def edges(self) -> List[Tuple[int, int]]:
         edges = []
         for src in self.nodes:
             for dst in self._map[src]:
                 edges.append((src, dst))
         return edges
+
+    @property
+    def edge_count(self) -> int:
+        return len(self.edges)
 
     def save(self, filename: str):
         h = h5py.File(filename, 'w')

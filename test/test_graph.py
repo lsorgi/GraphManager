@@ -59,3 +59,11 @@ def test_graph_histogram(tmp_folder):
     filename = os.path.join(tmp_folder, 'out_degree.png')
     graph.draw(filename)
     assert os.path.isfile(filename)
+
+def test_node_and_edge_count():
+    nodes = [1, 4, 6, 8, 9, 10]
+    edges = [(1, 4), (1, 6), (1, 8), (4, 6), (10, 1)]
+    graph = Graph(nodes=nodes, edges=edges)
+    assert graph.node_count == 6
+    assert graph.edge_count == 5
+
